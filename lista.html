@@ -12,6 +12,10 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        .form-control{
+            margin-bottom: 5px;
+        }
     </style>
 
     <script src="angular.js"></script>
@@ -24,6 +28,9 @@
                 {nome: "Ana", telefone: "99998877"},
                 {nome: "Maria", telefone: "99998866"}
             ];
+            $scope.addContato = function (contato) {
+                $scope.contatos.push(angular.copy(contato));
+            }
         });
     </script>
 </head>
@@ -39,7 +46,15 @@
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
             </tr>
+
+
         </table>
+        <hr />
+        <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome"/> <!--ngModel vincula uma propriedade ao scope-->
+        <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone"/>
+        <button class="btn btn-primary btn-block" ng-click="addContato(contato)">Adicionar Contato</button>  <!--ngClick atribui um comportamento ao evento-->
+
+
     </div>
 </body>
 </html>
