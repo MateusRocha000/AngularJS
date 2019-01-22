@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="listaTelefonica">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Telefonica</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+
+    <style>
+        .jumbotron{
+            width: 400px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+    <script src="angular.js"></script>
+    <script>
+        angular.module("listaTelefonica", []);
+        angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope) {
+            $scope.app = "Lista Telefonica";
+            $scope.contatos = [
+                {nome: "Pedro", telefone: "99998888"},
+                {nome: "Ana", telefone: "99998877"},
+                {nome: "Maria", telefone: "99998866"}
+            ];
+        });
+    </script>
+</head>
+<body ng-controller="listaTelefonicaCtrl"> <!--Vincula a view com o controlador-->
+    <div class="jumbotron">
+        <h4 ng-bind="app"></h4> <!--Substitui o elemento pela expressão, isto <h4>{{app}}</h4> tbm funciona-->
+        <table class="table table-striped">
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+            </tr>
+            <tr ng-repeat="contato in contatos"> <!--Itera sobre os objetos-->
+                <td>{{contato.nome}}</td>
+                <td>{{contato.telefone}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
