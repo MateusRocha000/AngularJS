@@ -1,0 +1,27 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "JSON do Angular",
+  "main": "js/angular-locale_pt-br.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateusRocha000/AngularJS.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Mateus Rocha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MateusRocha000/AngularJS/issues"
+  },
+  "homepage": "https://github.com/MateusRocha000/AngularJS#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect": "^3.6.6",
+    "express": "^4.16.4"
+  }
+}
